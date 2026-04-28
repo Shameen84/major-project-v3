@@ -3,76 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
+    <title>Freelanzo</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
 
-  </head>
 <body>
-    
-<!-- <h2>Freelance Hub</h2> -->
- <!-- <img src="logo.jpg"  alt="Logo"> -->
- <h2 style="background-color: #2563eb; padding: 10px;">Freelance Hub</h2>
 
-    <nav class="navbar navbar-expand-lg">
+<!-- Header -->
+<h2 style="background-color: #333; padding: 10px; color: white;">Freelanzo</h2>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Task Link</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Jobs</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link active " aria-current="page" href="#">Post Jobs</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Chat</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link active " aria-current="page" href="#">Dash Borad</a>
-        </li>
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Jobs</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Post</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Chat</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Apply as a Freelancer</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Payment</a></li>
       </ul>
-      
-      <!-- <button type="registration">Registration</button>
-      <button type="login">Login</button> -->
+
       <button class="btn btn-outline-dark me-2">Registration</button>
       <button class="btn btn-outline-dark me-3">Login</button>
 
-
-
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search">
+        <button class="btn btn-outline-success">Search</button>
       </form>
-
     </div>
   </div>
 </nav>
+
+<!-- Hero Section -->
+<div class="job-header text-center mt-4">
+    <h3>Find Your Next Dream Project Faster</h3>
+    <p>Connecting top talent with the best opportunities worldwide.</p>
+</div>
+
+<!-- Main Section -->
+<div class="box">
+
+  <!-- LEFT -->
+  <div class="left-box">
+    <div class="content">
+      <h4>Find the best way to freelancing</h4>
+      <p>Start working on projects that truly matter and grow your career.</p>
+
+      <!-- ✅ BUTTON YAHAN ADD KIYA -->
+      <button class="btn btn-primary mt-3">Get Started</button>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right-box">
+    <div class="img">
+      <!-- ⚠️ agar image folder me hai tabhi ye chalega -->
+      <img src="image/freelance.jpg" alt="Freelance Image" class="img-fluid">
+    </div>
+  </div>
+
+</div>
+
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- <img src="freelance.jpg" height="500px" width="2000px" alt=""> -->
- <div class="job-header">
-   <center><h3>Find Your Next Dream Project</h3>
-    <p>Connecting top talent with the best opportunities worldwide.</p>
-</div></center>
 
-<div class="center-container">
-    <img src="freelance.jpg" class="main-image" alt="Project Image">
-    <h2>About Us</h2>
-</div>
 </body>
 </html>
