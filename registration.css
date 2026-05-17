@@ -1,0 +1,95 @@
+/* Poora Updated CSS */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #005C4B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Aapka .container ab .form-container ke naam se hai (HTML ke hisaab se) */
+.form-container {
+  background: white;
+  padding: 25px;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333; /* Form ke andar dark color achha lagega */
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* Width fix karne ke liye */
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #005C4B; /* Register button ko WhatsApp green kiya hai */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #004a3d;
+}
+
+#errorMsg, #msg {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* --- PAYMENT MODAL STYLING (YE ZARURI HAI) --- */
+.modal {
+  display: none; /* JS isse flex karega */
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8); /* Background dhundhla karne ke liye */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.qr-container img {
+  width: 180px;
+  height: 180px;
+  margin: 15px 0;
+  border: 1px solid #ddd;
+}
+
+.pay-btn {
+  background-color: #28a745;
+  margin-top: 10px;
+}
+
+.close-modal {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+  color: #aaa;
+}

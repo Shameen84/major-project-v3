@@ -3,74 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freelanzo</title>
+    <title>Freelanzo | Freelance Services Marketplace</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2 style="background-color: #333; padding: 10px; color: white;">Freelanzo</h2>
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Freelanzo<span class="text-success">.</span></a>
+    
+    <div class="search-container d-none d-lg-flex flex-grow-1 mx-4">
+        <input class="form-control" type="search" placeholder="What service are you looking for today?">
+        <button class="btn btn-dark">Search</button>
+    </div>
 
-<nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <!-- <a class="navbar-brand" href="#">Task Link</a> -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="jobs.html">Jobs</a></li>
-        <li class="nav-item"><a class="nav-link active" href="post.html">Post</a></li>
-        <li class="nav-item"><a class="nav-link active" href="chat.html">Chat</a></li>
-        <li class="nav-item"><a class="nav-link active" href="apply.html">Apply as a Freelancer</a></li>
-        <li class="nav-item"><a class="nav-link active" href="payment.html">Payment</a></li>
+
+    <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item"><a class="nav-link" href="jobs.html">Explore</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Sign In</a></li>
+        <li class="nav-item ms-lg-3"><a class="btn btn-outline-success fw-bold px-4" href="registration.html">Join</a></li>
       </ul>
-      <button class="btn btn-outline-dark me-2">Registration</button>
-      <button class="btn btn-outline-dark me-3">Login</button>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search">
-        <button class="btn btn-outline-success">Search</button>
-      </form>
     </div>
   </div>
 </nav>
 
-<div class="job-header text-center mt-4">
-    <h3>Find Your Next Dream Project Faster</h3>
-    <p>Find the best way to freelance services for your business </p>
-</div>
-
-<div class="box">
-  <div class="left-box">
-    <div class="content">
-      <h4>Find the best way to freelancing</h4>
-      <p>Start working on projects that truly matter and grow your career.</p>
-      <button class="btn btn-primary mt-3">Get Started</button>
+<div class="hero-fiverr">
+    <div class="container text-start">
+        <h1 class="fw-bold display-4">Find the perfect <i class="fw-normal">freelance</i> services for your business</h1>
+        
+        <div class="popular-tags">
+            <span class="popular-label">Popular:</span>
+            <a href="#" class="tag">Website Design</a>
+            <a href="#" class="tag">WordPress</a>
+            <a href="#" class="tag">Logo Design</a>
+            <a href="#" class="tag">AI Services</a>
+        </div>
     </div>
-  </div>
-  <div class="right-box">
-    <div class="img">
-      <img src="image/freelance.jpg" alt="Freelance Image" class="img-fluid">
+</div>
+
+<div class="container my-5">
+    <h2 class="fw-bold mb-4">Popular professional services</h2>
+    <div class="row g-4">
+        <div class="col-md-3">
+            <div class="gig-card">
+                <img src="image/freelance.jpg" class="img-fluid" alt="Service">
+                <div class="p-3">
+                    <div class="d-flex align-items-center mb-2">
+                        <div class="avatar">AD</div>
+                        <span class="ms-2 fw-bold small">Alex Design</span>
+                    </div>
+                    <p class="gig-text">I will create a modern responsive website for your brand</p>
+                    <div class="text-warning small">★ 5.0 <span class="text-muted">(1k+)</span></div>
+                </div>
+                <div class="p-3 border-top d-flex justify-content-between align-items-center">
+                    <span class="text-muted small fw-bold">STARTING AT</span>
+                    <span class="fw-bold">$100</span>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
-<div class="boxx1">
-  <p class="title1">Want to visit freelanzo?</p>
-</div>
-
-<div class="boxx2">
-  <button class="b1">Click here</button>
-</div>
-
-<footer class="main-footer">
-    <div class="footer-links">
-        <a href="#">Terms & Conditions</a>
-        <a href="#">Privacy Policy</a>
-    </div>
-    <div class="footer-item">
-        <p>&copy; 2026 Freelanzo. All rights reserved.</p>
+<footer class="footer-fiverr border-top py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+                <span class="fw-bold fs-4">Freelanzo</span>
+                <span class="text-muted ms-3 small">© Freelanzo International Ltd. 2026</span>
+            </div>
+            <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                <a href="#" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                <a href="#" class="text-muted text-decoration-none">Terms of Service</a>
+            </div>
+        </div>
     </div>
 </footer>
 

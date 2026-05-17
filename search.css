@@ -1,0 +1,33 @@
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-input {
+    width: 300px;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px 0 0 5px; /* Left side se round */
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-input:focus {
+    border-color: #005C4B; /* Green glow jab user click kare */
+}
+
+#searchBtn {
+    width: auto; /* Buttons poori width na le */
+    padding: 10px 20px;
+    background-color: #005C4B;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0; /* Right side se round */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#searchBtn:hover {
+    background-color: #004a3d;
+}

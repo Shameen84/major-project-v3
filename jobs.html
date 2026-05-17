@@ -4,98 +4,190 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jobs - Freelanzo</title>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
   <style>
+    /* 1. Basic Setup */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      /* Aapka manga hua gradient color */
-      background: linear-gradient(to right, darkgreen, #09b65c);
-      min-height: 100vh;
+      background-color: #005C4B;
       color: white;
-      font-family: sans-serif;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      line-height: 1.6;
     }
 
-    .card {
-      background: rgba(255, 255, 255, 0.9); /* Cards ko white rakha hai taaki text dikhe */
-      color: #333;
+    /* 2. Navbar */
+    .navbar {
+      background-color: #1a1a1a;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      padding: 6px 12px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 4px;
+    }
+    .nav-links a:hover { background: white; color: #1a1a1a; }
+
+    /* 3. Header Section */
+    .header {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .header h2 { font-size: 32px; margin-bottom: 10px; }
+    .header p { opacity: 0.8; }
+
+    /* 4. Search and Tags */
+    .search-section {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+    .job-search {
+      width: 100%;
+      padding: 15px 25px;
+      border-radius: 30px;
       border: none;
-      border-radius: 12px;
-      transition: transform 0.3s ease;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      outline: none;
     }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    .popular-tags {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
     }
-
-    .apply-btn {
-      background-color: darkgreen;
-      border: none;
-    }
-
-    .apply-btn:hover {
-      background-color: #064d06;
-    }
-
-    /* Search bar ko thoda better look dene ke liye */
-    .form-control {
+    .tag {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 6px 16px;
       border-radius: 20px;
-      border: none;
-      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: 0.3s;
     }
+    .tag:hover { background: white; color: #005C4B; }
+
+    /* 5. Job Cards */
+    .jobs-container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 20px 50px;
+    }
+    .job-card {
+      background: white;
+      color: #333;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .job-card h3 { color: #1a1a1a; margin-bottom: 10px; }
+    .job-card p { color: #555; margin-bottom: 15px; }
+    .budget { font-weight: bold; color: #005C4B; display: block; margin-bottom: 15px; }
+    .apply-btn {
+      background-color: #1dbf73; /* Fiverr Green */
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+    .apply-btn:hover { background-color: #19a463; }
   </style>
 </head>
-
 <body>
 
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Freelanzo</a>
-    <div>
-      <a href="index.html" class="btn btn-light me-2">Home</a>
-      <a href="post.html" class="btn btn-light me-2">Post Job</a>
-      <a href="chat.html" class="btn btn-light">Chat</a>
+<nav class="navbar">
+    <a href="index.html" class="navbar-brand">Freelanzo</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="post.html">Post Job</a>
+      <a href="chat.html">Chat</a>
     </div>
-  </div>
 </nav>
 
-<div class="container text-center mt-5">
-  <h2 class="fw-bold">Available Jobs</h2>
+<div class="header">
+  <h2>Available Jobs</h2>
   <p>Find the best freelance jobs here 🚀</p>
 </div>
 
-<div class="container mt-4" style="max-width: 600px;">
-  <input type="text" class="form-control shadow-sm" placeholder="Search jobs...">
+<div class="search-section">
+  <input type="text" id="jobSearch" class="job-search" placeholder="Search for jobs (e.g. Logo Design)...">
+  <div class="popular-tags">
+      <span class="tag" onclick="filterByTag('Website Design')">Website Design</span>
+      <span class="tag" onclick="filterByTag('Logo Design')">Logo Design</span>
+      <span class="tag" onclick="filterByTag('Data Entry')">Data Entry</span>
+      <span class="tag" onclick="filterByTag('AI Services')">AI Services</span>
+  </div>
 </div>
 
-<div class="container mt-5 pb-5">
-
-  <div class="card p-4 mb-4 shadow-sm">
-    <h5>Website Design Needed</h5>
-    <p>Looking for a frontend developer to build responsive website.</p>
-    <p><strong>Budget:</strong> ₹5000</p>
-    <button class="btn btn-success apply-btn">Apply Now</button>
+<div class="jobs-container" id="jobList">
+  <div class="job-card">
+    <h3>Website Design Needed</h3>
+    <p>Looking for a frontend developer to build a modern responsive website using HTML/CSS.</p>
+    <span class="budget">Budget: ₹5000</span>
+    <button class="apply-btn">Apply Now</button>
   </div>
 
-  <div class="card p-4 mb-4 shadow-sm">
-    <h5>Logo Design</h5>
-    <p>Need a creative logo designer for startup.</p>
-    <p><strong>Budget:</strong> ₹2000</p>
-    <button class="btn btn-success apply-btn">Apply Now</button>
+  <div class="job-card">
+    <h3>Logo Design</h3>
+    <p>Need a professional logo for a new tech startup. Looking for creative ideas.</p>
+    <span class="budget">Budget: ₹2000</span>
+    <button class="apply-btn">Apply Now</button>
   </div>
 
-  <div class="card p-4 mb-4 shadow-sm">
-    <h5>Data Entry Work</h5>
-    <p>Simple typing and data entry project.</p>
-    <p><strong>Budget:</strong> ₹1000</p>
-    <button class="btn btn-success apply-btn">Apply Now</button>
+  <div class="job-card">
+    <h3>Data Entry Work</h3>
+    <p>Simple copy-paste and typing work. Basic Excel knowledge required.</p>
+    <span class="budget">Budget: ₹1000</span>
+    <button class="apply-btn">Apply Now</button>
   </div>
-
 </div>
 
-<script src="https://jsdelivr.net"></script>
-<script src="script.js"></script>
+<script>
+    const searchInput = document.getElementById('jobSearch');
+    const cards = document.querySelectorAll('.job-card');
+
+    searchInput.addEventListener('input', (e) => {
+        filterContent(e.target.value.toLowerCase());
+    });
+
+    function filterByTag(tagName) {
+        searchInput.value = tagName;
+        filterContent(tagName.toLowerCase());
+    }
+
+    function filterContent(text) {
+        cards.forEach(card => {
+            const title = card.querySelector('h3').innerText.toLowerCase();
+            const desc = card.querySelector('p').innerText.toLowerCase();
+            if (title.includes(text) || desc.includes(text)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    }
+</script>
 
 </body>
 </html>

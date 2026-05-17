@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration - Freelanzo</title>
+  <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Registration</h2>
+
+  <form id="registerForm">
+    <input type="text" id="username" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email Address" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <p id="errorMsg" style="color: red; margin-top: 10px;"></p>
+</div>
+
+<!-- PAYMENT MODAL (Registration ke baad dikhega) -->
+<div id="paymentModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closePayment()">&times;</span>
+    <h2>Scan to Pay</h2>
+    <p>Please pay the registration fee to activate your <strong>Freelanzo</strong> account.</p>
+    
+    <!-- UPI QR Code -->
+    <div class="qr-container">
+      <!-- Maine link update kar diya hai taaki QR sahi se dikhe -->
+      <img id="qrCode" src="https://qrserver.com" alt="Payment QR Code">
+    </div>
+
+    <div class="payment-details">
+      <p>Amount: <strong>₹500</strong></p>
+      <p>UPI ID: <strong>yourname@upi</strong></p>
+    </div>
+
+    <input type="text" id="utrNumber" placeholder="Enter Transaction ID (UTR)" required>
+    <button class="pay-btn" onclick="confirmPayment()">I Have Paid</button>
+  </div>
+</div>
+
+<script src="registration.js"></script>
+</body>
+</html>

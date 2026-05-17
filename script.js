@@ -1,31 +1,41 @@
-// Socket connection
 const socket = io("http://localhost:5000");
 
-// Elements
 const sendBtn = document.getElementById("sendBtn");
+const messageInput = document.getElementById("messageInput");
+const chatBox = document.getElementById("chatBox");
 
 if (sendBtn) {
   sendBtn.addEventListener("click", () => {
-    const input = document.getElementById("messageInput");
-    const message = input.value;
-
+    const message = messageInput.value;
     if (message.trim() === "") return;
-
-    // Send message to server
     socket.emit("sendMessage", message);
-
-    input.value = "";
+    displayMessage(message, 'sent');
+    messageInput.value = "";
   });
 }
 
-// Receive message from server
+if (messageInput) {
+    messageInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            sendBtn.click();
+        }
+    });
+}
+
 socket.on("receiveMessage", (msg) => {
-  const chatBox = document.getElementById("chatBox");
-
-  const msgDiv = document.createElement("div");
-  msgDiv.classList.add("message");
-  msgDiv.innerText = msg;
-
-  chatBox.appendChild(msgDiv);
-  chatBox.scrollTop = chatBox.scrollHeight;
+  displayMessage(msg, 'received');
 });
+
+function displayMessage(msg, type) {
+  if (!chatBox) return;
+  const msgDiv = document.createElement("div");
+  msgDiv.classList.add("message-bubble");
+  msgDiv.classList.add(type === 'sent' ? "message-sent" : "message-received");
+  msgDiv.innerText = msg;
+  chatBox.appendChild(msgDiv);
+  chatBox.scrollTo({
+    top: chatBox.scrollHeight,
+    behavior: 'smooth'
+  });
+}
+  
