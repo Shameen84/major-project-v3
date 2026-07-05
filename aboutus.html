@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #2f5237, #1e3525);
+            color: #fff;
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+            padding: 50px 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 50px;
+            color: #dcdcdc;
+        }
+
+        .row {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .box h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .box p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>About Us</h1>
+
+    <p class="intro">
+        We are passionate beginners stepping into the world of digital services with a strong desire to learn, grow, and deliver quality work. 
+        As freshers, we bring creativity, dedication, and a fresh perspective to every project we take on.
+        Our goal is to provide reliable and affordable solutions while continuously improving our skills.
+    </p>
+
+    <div class="row">
+
+        <div class="box">
+            <h2>Our Vision</h2>
+            <p>
+                Our vision is to grow as skilled professionals by continuously learning, improving, and delivering quality work. 
+                We aim to build a strong reputation based on trust, creativity, and dedication.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Our Mission</h2>
+            <p>
+                We are emerging professionals driven by innovation and learning. 
+                Our mission is to provide reliable, efficient, and creative solutions while building long-term relationships with clients.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

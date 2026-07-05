@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Development Card</title>
+
+<style>
+/* BODY */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #2f5b3a;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* CARD */
+.card {
+    background-color: #d9d9d9;
+    padding: 30px 20px;
+    border-radius: 10px;
+    width: 420px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* HOVER */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* TITLE */
+.card h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+/* TEXT */
+.card p {
+    margin-top: 15px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 500px) {
+    .card {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 22px;
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- CLICKABLE CARD -->
+<a href="web.html" style="text-decoration: none; color: black;">
+    <div class="card">
+        <h2>Web Development Intern</h2>
+        <p>HTML, CSS, JavaScript</p>
+    </div>
+</a>
+
+</body>
+</html>
